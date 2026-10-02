@@ -1,0 +1,6 @@
+{
+  "name": "KR Studio — Digital Product Studio",
+  "description": "Ultra-premium digital product studio designing and engineering custom web applications, mobile apps, business software, and AI automation workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
