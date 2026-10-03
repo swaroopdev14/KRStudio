@@ -108,7 +108,7 @@ export const OwnershipSection: React.FC<OwnershipSectionProps> = ({ onOpenLeadMo
         </div>
 
         {/* 4 Pillars of Absolute Ownership */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {OWNERSHIP_PILLARS.map((pillar, idx) => (
             <div
               key={idx}
@@ -127,8 +127,42 @@ export const OwnershipSection: React.FC<OwnershipSectionProps> = ({ onOpenLeadMo
           ))}
         </div>
 
+        {/* Launch Day Handover Protocol Banner */}
+        <div className="max-w-4xl mx-auto rounded-2xl p-5 sm:p-6 bg-slate-900 text-white border border-slate-800 shadow-xl space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-800 gap-2">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-300 font-display">
+                Official Launch Day Handover Protocol
+              </span>
+            </div>
+            <span className="text-[11px] font-mono text-emerald-400 font-semibold">
+              Zero Hostage Fees Guaranteed
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+              <div className="font-bold text-blue-400 font-mono mb-1">01. Source Code</div>
+              <div className="text-slate-300 text-[11px]">Private GitHub transfer with full commit history & push rights.</div>
+            </div>
+            <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+              <div className="font-bold text-indigo-400 font-mono mb-1">02. Cloud Infrastructure</div>
+              <div className="text-slate-300 text-[11px]">Direct deployment inside your own AWS, GCP, or Vercel accounts.</div>
+            </div>
+            <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+              <div className="font-bold text-emerald-400 font-mono mb-1">03. Domain & DNS</div>
+              <div className="text-slate-300 text-[11px]">Configured on your registrar. You pay regular renewal rates directly.</div>
+            </div>
+            <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+              <div className="font-bold text-cyan-400 font-mono mb-1">04. Documentation</div>
+              <div className="text-slate-300 text-[11px]">Video architecture walkthrough + 30-day bug warranty included.</div>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom CTA trigger */}
-        <div className="mt-16 text-center">
+        <div className="mt-14 text-center">
           <button
             onClick={onOpenLeadModal}
             className="kr-btn-primary px-8 py-4 rounded-full font-bold text-sm sm:text-base inline-flex items-center gap-2 active:scale-95"

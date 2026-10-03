@@ -19,9 +19,9 @@
   }
 }
 
-/* Subtle Architectural Dot Grid Texture (Design principle from reference) */
+/* Subtle Architectural Dot Grid Texture */
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -33,16 +33,16 @@
 /* KR Studio Soft Ambient Gradients - True Blue & Indigo Palette */
 .kr-mesh-hero {
   background: 
-    radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.08) 0px, transparent 55%),
-    radial-gradient(at 85% 20%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.05) 0px, transparent 60%),
-    radial-gradient(at 80% 85%, rgba(139, 92, 246, 0.06) 0px, transparent 50%);
+    radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.09) 0px, transparent 55%),
+    radial-gradient(at 85% 20%, rgba(79, 70, 229, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.06) 0px, transparent 60%),
+    radial-gradient(at 80% 85%, rgba(124, 58, 237, 0.06) 0px, transparent 50%);
 }
 
 .dark .kr-mesh-hero {
   background: 
-    radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.12) 0px, transparent 55%),
-    radial-gradient(at 85% 20%, rgba(99, 102, 241, 0.10) 0px, transparent 50%),
+    radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.14) 0px, transparent 55%),
+    radial-gradient(at 85% 20%, rgba(79, 70, 229, 0.12) 0px, transparent 50%),
     radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.08) 0px, transparent 60%);
 }
 
@@ -70,8 +70,8 @@
 
 /* KR Studio Pill Badges */
 .kr-badge-pill {
-  background: rgba(239, 246, 255, 0.85);
-  border: 1px solid rgba(191, 219, 254, 0.8);
+  background: rgba(239, 246, 255, 0.9);
+  border: 1px solid rgba(191, 219, 254, 0.85);
   color: #1D4ED8;
 }
 .dark .kr-badge-pill {
@@ -104,6 +104,20 @@
 
 .dark .kr-card-shadow {
   box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* Subtle float animation for micro-badges */
+@keyframes soft-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-soft-float {
+  animation: soft-float 4s ease-in-out infinite;
 }
 
 /* Custom Scrollbars */

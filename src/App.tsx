@@ -5,6 +5,7 @@ import { Capabilities } from './components/Capabilities.tsx';
 import { OwnershipSection } from './components/OwnershipSection.tsx';
 import { Portfolio } from './components/Portfolio.tsx';
 import { ProcessTimeline } from './components/ProcessTimeline.tsx';
+import { ProjectEstimator } from './components/ProjectEstimator.tsx';
 import { TeamSection } from './components/TeamSection.tsx';
 import { FAQSection } from './components/FAQSection.tsx';
 import { BottomBanner } from './components/BottomBanner.tsx';
@@ -77,17 +78,20 @@ export default function App() {
         {/* 06. The 7-Step Build Process (Discovery to 30-Day Support) */}
         <ProcessTimeline onOpenLeadModal={() => handleOpenLeadModal('Project Inquiry')} />
 
-        {/* 07. Studio Founders & Lead Engineers (Swaroop & Krish) */}
+        {/* 07. Interactive Project Scope & Turnaround Estimator */}
+        <ProjectEstimator onOpenLeadModal={handleOpenLeadModal} />
+
+        {/* 08. Studio Founders & Lead Engineers (Swaroop & Krish) */}
         <TeamSection onOpenLeadModal={() => handleOpenLeadModal('Direct Engineering Inquiry')} />
 
-        {/* 08. Frequently Answered Questions (Accurate Studio Policies) */}
+        {/* 09. Frequently Answered Questions (Accurate Studio Policies) */}
         <FAQSection onOpenLeadModal={() => handleOpenLeadModal('Technical Question')} />
 
-        {/* 09. High-Impact Bottom Call to Action Banner */}
+        {/* 10. High-Impact Bottom Call to Action Banner */}
         <BottomBanner onOpenLeadModal={() => handleOpenLeadModal('Free Product Architecture Call')} />
       </main>
 
-      {/* 10. Footer */}
+      {/* 11. Footer */}
       <Footer onOpenLeadModal={() => handleOpenLeadModal('Footer Inquiry')} />
 
       {/* Lead Intake Modal */}
