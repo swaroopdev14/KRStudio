@@ -17,7 +17,6 @@ import {
   Layers
 } from 'lucide-react';
 import { CAPABILITIES_DATA } from '../data/studioData.ts';
-import { CapabilityItem } from '../types/index.ts';
 
 interface CapabilitiesProps {
   onOpenLeadModal: (initialProjectType?: string) => void;
@@ -25,6 +24,7 @@ interface CapabilitiesProps {
 
 export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenLeadModal }) => {
   const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
+  const [filterCategory, setFilterCategory] = useState<'all' | 'apps' | 'tools' | 'ai'>('all');
 
   const toggleExpand = (id: string) => {
     setExpandedCardId((prev) => (prev === id ? null : id));
@@ -44,102 +44,168 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenLeadModal }) =
     }
   };
 
+  const filteredData = CAPABILITIES_DATA.filter((item) => {
+    if (filterCategory === 'all') return true;
+    if (filterCategory === 'apps') return item.id === 'web-development' || item.id === 'mobile-applications';
+    if (filterCategory === 'tools') return item.id === 'business-software' || item.id === 'payments-billing';
+    if (filterCategory === 'ai') return item.id === 'ai-systems' || item.id === 'workflow-automation' || item.id === 'cloud-infrastructure' || item.id === 'security-conscious-dev';
+    return true;
+  });
+
   return (
-    <section id="capabilities" className="py-20 lg:py-28 relative transition-colors duration-200">
+    <section id="capabilities" className="py-16 sm:py-20 lg:py-28 relative bg-kr-canvas transition-colors duration-200 border-t border-slate-200/70 dark:border-slate-800/70">
       
-      {/* Background ambient lighting */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
-        <div className="absolute top-1/3 left-0 w-96 h-96 bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-0 w-96 h-96 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-3xl"></div>
-      </div>
+      {/* Background Architectural Dot Texture */}
+      <div className="absolute inset-0 bg-dot-grid opacity-60 pointer-events-none -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-4">
-            <span>ENGINEERING CAPABILITIES MATRIX</span>
+        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
+          <div className="kr-badge-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold mb-3.5 shadow-xs">
+            <Cpu className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+            <span className="tracking-wide uppercase">Core Engineering Domains</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white font-display tracking-tight">
-            Specialized engineering for every layer of your business.
+
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white font-display tracking-tight">
+            Tailored digital products. <br className="hidden sm:inline" />
+            Built for rapid launch.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            We don't do half-baked templates. Each domain is built using modern, production-grade stacks with clear architecture handoffs.
+
+          <p className="mt-3 sm:mt-4 text-xs sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            Click any domain to inspect features, deliverables, and architecture specs. Clean code, modern TypeScript, and 100% intellectual property handover.
           </p>
         </div>
 
-        {/* 8 Distinct Domain Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {CAPABILITIES_DATA.map((item) => {
+        {/* Quick Filter Pill Tabs (Makes mobile browsing 10x faster & cleaner!) */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-12">
+          <button
+            onClick={() => setFilterCategory('all')}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+              filterCategory === 'all'
+                ? 'bg-blue-600 text-white shadow-xs'
+                : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:bg-slate-100'
+            }`}
+          >
+            All Domains (8)
+          </button>
+          <button
+            onClick={() => setFilterCategory('apps')}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+              filterCategory === 'apps'
+                ? 'bg-blue-600 text-white shadow-xs'
+                : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:bg-slate-100'
+            }`}
+          >
+            Web & Mobile
+          </button>
+          <button
+            onClick={() => setFilterCategory('tools')}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+              filterCategory === 'tools'
+                ? 'bg-blue-600 text-white shadow-xs'
+                : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:bg-slate-100'
+            }`}
+          >
+            Business & Billing
+          </button>
+          <button
+            onClick={() => setFilterCategory('ai')}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+              filterCategory === 'ai'
+                ? 'bg-blue-600 text-white shadow-xs'
+                : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:bg-slate-100'
+            }`}
+          >
+            AI & Cloud Systems
+          </button>
+        </div>
+
+        {/* Compact, Ergonomic Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {filteredData.map((item) => {
             const isExpanded = expandedCardId === item.id;
+
             return (
               <div
                 key={item.id}
-                className={`flex flex-col justify-between rounded-2xl p-6 transition-all duration-300 bg-white/90 dark:bg-slate-900/90 border ${item.accentColors.border} ${item.accentColors.darkBorder} shadow-sm hover:shadow-lg relative overflow-hidden backdrop-blur-md glow-card`}
+                className={`rounded-3xl p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between relative bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 kr-card-shadow hover:shadow-xl ${
+                  isExpanded ? 'ring-2 ring-blue-500/50' : ''
+                }`}
               >
-                {/* Ambient Card Top Glow */}
-                <div className={`absolute top-0 inset-x-0 h-1 bg-gradient-to-r ${item.accentColors.glow}`}></div>
-
                 <div>
-                  {/* Card Header: Number + Icon */}
+                  {/* Top Bar: Clean Number Tag */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500">
+                    <span className="text-[11px] font-mono font-bold text-slate-400 dark:text-slate-500">
                       {item.number}
                     </span>
-                    <div className={`p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 ${item.accentColors.text}`}>
-                      {getIcon(item.iconName, 'w-5 h-5')}
-                    </div>
+                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: item.accentColors.primary }}></span>
                   </div>
 
-                  {/* Title & Color Theme Indicator */}
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white font-display">
+                  {/* Icon Box with Domain-Specific Glow */}
+                  <div 
+                    className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4 text-white shadow-md transition-transform"
+                    style={{
+                      background: `linear-gradient(135deg, ${item.accentColors.primary}, ${item.accentColors.secondary})`,
+                      boxShadow: `0 6px 16px -3px ${item.accentColors.primary}35`
+                    }}
+                  >
+                    {getIcon(item.iconName, 'w-5 h-5')}
+                  </div>
+
+                  {/* Domain Title */}
+                  <h3 className="text-lg font-extrabold text-slate-900 dark:text-white font-display mb-2">
                     {item.title}
                   </h3>
 
-                  {/* Simple US English Description */}
-                  <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {/* Plain-English Punchy Description */}
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
                     {item.simpleDescription}
                   </p>
-
-                  {/* 3 Key Points */}
-                  <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 space-y-2">
-                    {item.keyPoints.map((point, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300">
-                        <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
-                        <span className="leading-snug">{point}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
-                {/* Progressive Disclosure: Expandable Architecture Drawer */}
-                <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
+                <div>
+                  {/* Expand / Collapse Button */}
                   <button
                     onClick={() => toggleExpand(item.id)}
-                    className="w-full flex items-center justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 py-1 transition-colors group"
+                    className="w-full py-2 px-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:bg-blue-50/70 dark:hover:bg-slate-800 border border-slate-200/70 dark:border-slate-700/60 text-[11px] font-bold text-slate-700 dark:text-slate-300 flex items-center justify-between transition-colors mb-2.5"
+                    aria-expanded={isExpanded}
                   >
-                    <span>{isExpanded ? 'Hide Architecture Specs' : 'Explore Architecture & Details'}</span>
-                    {isExpanded ? (
-                      <ChevronUp className="w-4 h-4 text-slate-400 group-hover:text-blue-500" />
-                    ) : (
-                      <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-blue-500" />
-                    )}
+                    <span className="flex items-center gap-1.5">
+                      <Code2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+                      <span>{isExpanded ? 'Hide Specs' : 'View Specs & Deliverables'}</span>
+                    </span>
+                    {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                   </button>
 
-                  {/* Expanded Technical Specs Details */}
+                  {/* Smooth Expandable Drawer */}
                   {isExpanded && (
-                    <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 space-y-3 text-xs animate-in fade-in duration-200">
-                      
-                      {/* Tech Stack Badges */}
+                    <div className="pt-3 pb-2 border-t border-slate-100 dark:border-slate-800 space-y-3 text-left animate-in fade-in duration-200">
+                      {/* Highlights */}
                       <div>
-                        <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
-                          Core Stack
+                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
+                          Highlights
+                        </div>
+                        <ul className="space-y-1.5">
+                          {item.keyPoints.map((point, pIdx) => (
+                            <li key={pIdx} className="flex items-start gap-1.5 text-[11px] text-slate-700 dark:text-slate-300 leading-snug">
+                              <Check className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Core Tech Stack */}
+                      <div>
+                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
+                          Stack
                         </div>
                         <div className="flex flex-wrap gap-1">
                           {item.techSpecs.coreStack.map((tech) => (
                             <span 
-                              key={tech}
-                              className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]"
+                              key={tech} 
+                              className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60"
                             >
                               {tech}
                             </span>
@@ -147,49 +213,32 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({ onOpenLeadModal }) =
                         </div>
                       </div>
 
-                      {/* Architecture Summary */}
-                      <div>
-                        <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-0.5">
-                          Architecture
-                        </div>
-                        <p className="text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed">
-                          {item.techSpecs.architectureSummary}
-                        </p>
-                      </div>
-
                       {/* Deliverables */}
                       <div>
-                        <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
-                          What You Receive
+                        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
+                          Deliverables
                         </div>
-                        <ul className="space-y-1 text-[11px] text-slate-600 dark:text-slate-400">
-                          {item.techSpecs.deliverables.map((deliv, dIdx) => (
-                            <li key={dIdx} className="flex items-center gap-1.5">
-                              <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                              <span>{deliv}</span>
+                        <ul className="space-y-1">
+                          {item.techSpecs.deliverables.map((del, dIdx) => (
+                            <li key={dIdx} className="text-[10px] text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+                              <span className="w-1 h-1 rounded-full bg-blue-500"></span>
+                              <span>{del}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
-
-                      {/* Security / Performance */}
-                      <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200/60 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
-                        <span className="font-semibold text-slate-700 dark:text-slate-300">Standard: </span>
-                        {item.techSpecs.securityPerformance}
-                      </div>
-
-                      {/* Direct CTA */}
-                      <button
-                        onClick={() => onOpenLeadModal(item.title)}
-                        className="w-full mt-2 py-2 px-3 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-semibold text-xs flex items-center justify-center gap-1.5 hover:opacity-90 transition-opacity"
-                      >
-                        <span>Build {item.title}</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
                     </div>
                   )}
-                </div>
 
+                  {/* Start Project Action */}
+                  <button
+                    onClick={() => onOpenLeadModal(item.title)}
+                    className="w-full py-2.5 px-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 hover:bg-blue-600 dark:hover:bg-blue-500 dark:hover:text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-xs"
+                  >
+                    <span>Start Project</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
             );
           })}

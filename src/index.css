@@ -4,7 +4,7 @@
 
 @theme {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -15,76 +15,109 @@
   }
 
   body {
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 }
 
-/* Custom Soft Mesh Gradients for Roy Digital Aesthetic */
-.mesh-gradient-hero {
-  background: 
-    radial-gradient(at 15% 15%, rgba(59, 130, 246, 0.14) 0px, transparent 55%),
-    radial-gradient(at 85% 20%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.08) 0px, transparent 60%),
-    radial-gradient(at 80% 85%, rgba(236, 72, 153, 0.08) 0px, transparent 50%);
-}
-
-.mesh-gradient-hero-dark {
-  background: 
-    radial-gradient(at 15% 15%, rgba(59, 130, 246, 0.18) 0px, transparent 55%),
-    radial-gradient(at 85% 20%, rgba(139, 92, 246, 0.16) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.12) 0px, transparent 60%),
-    radial-gradient(at 80% 85%, rgba(236, 72, 153, 0.10) 0px, transparent 50%);
-}
-
-.bg-dot-pattern {
-  background-image: radial-gradient(rgba(100, 116, 139, 0.15) 1px, transparent 1px);
+/* Subtle Architectural Dot Grid Texture (Design principle from reference) */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-.bg-dot-pattern-dark {
+.dark .bg-dot-grid {
   background-image: radial-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-/* Glassmorphism & Micro Shadows */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+/* KR Studio Soft Ambient Gradients - True Blue & Indigo Palette */
+.kr-mesh-hero {
+  background: 
+    radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.08) 0px, transparent 55%),
+    radial-gradient(at 85% 20%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.05) 0px, transparent 60%),
+    radial-gradient(at 80% 85%, rgba(139, 92, 246, 0.06) 0px, transparent 50%);
 }
 
-.dark .glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(51, 65, 85, 0.6);
+.dark .kr-mesh-hero {
+  background: 
+    radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.12) 0px, transparent 55%),
+    radial-gradient(at 85% 20%, rgba(99, 102, 241, 0.10) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.08) 0px, transparent 60%);
 }
 
-.soft-shadow {
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 20px 25px -5px rgba(0, 0, 0, 0.02);
+/* Studio Section Backgrounds */
+.bg-kr-canvas {
+  background-color: #F8FAFC;
+}
+.dark .bg-kr-canvas {
+  background-color: #0A0F1D;
 }
 
-.glow-card {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+.bg-kr-card {
+  background-color: #FFFFFF;
+}
+.dark .bg-kr-card {
+  background-color: #0F172A;
 }
 
-.glow-card:hover {
+.bg-kr-section-alt {
+  background-color: #F1F5F9;
+}
+.dark .bg-kr-section-alt {
+  background-color: #0D1326;
+}
+
+/* KR Studio Pill Badges */
+.kr-badge-pill {
+  background: rgba(239, 246, 255, 0.85);
+  border: 1px solid rgba(191, 219, 254, 0.8);
+  color: #1D4ED8;
+}
+.dark .kr-badge-pill {
+  background: rgba(30, 58, 138, 0.35);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #93C5FD;
+}
+
+/* High-Impact Primary Button with Soft Electric Glow */
+.kr-btn-primary {
+  background: linear-gradient(135deg, #2563EB 0%, #4F46E5 100%);
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px -4px rgba(37, 99, 235, 0.4), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kr-btn-primary:hover {
   transform: translateY(-2px);
+  box-shadow: 0 14px 30px -4px rgba(37, 99, 235, 0.55), 0 6px 10px -2px rgba(37, 99, 235, 0.2);
 }
 
-/* Custom scrollbar for clean look */
+.kr-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Studio Soft Cards & Shadows */
+.kr-card-shadow {
+  box-shadow: 0 10px 30px -8px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(0, 0, 0, 0.02);
+}
+
+.dark .kr-card-shadow {
+  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.35);
+  background: rgba(148, 163, 184, 0.4);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.5);
+  background: rgba(100, 116, 139, 0.6);
 }

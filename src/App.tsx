@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
@@ -12,6 +7,7 @@ import { Portfolio } from './components/Portfolio.tsx';
 import { ProcessTimeline } from './components/ProcessTimeline.tsx';
 import { TeamSection } from './components/TeamSection.tsx';
 import { FAQSection } from './components/FAQSection.tsx';
+import { BottomBanner } from './components/BottomBanner.tsx';
 import { LeadModal } from './components/LeadModal.tsx';
 import { Footer } from './components/Footer.tsx';
 
@@ -22,8 +18,7 @@ export default function App() {
       if (savedTheme) {
         return savedTheme === 'dark';
       }
-      // Default to clean bright light theme benchmark
-      return false;
+      return false; // Default to clean light mode matching reference
     }
     return false;
   });
@@ -31,7 +26,6 @@ export default function App() {
   const [leadModalOpen, setLeadModalOpen] = useState<boolean>(false);
   const [leadInitialType, setLeadInitialType] = useState<string | undefined>(undefined);
 
-  // Sync dark mode class with html document element
   useEffect(() => {
     const root = document.documentElement;
     if (darkMode) {
@@ -56,44 +50,47 @@ export default function App() {
   return (
     <div 
       className={`min-h-screen transition-colors duration-200 ${
-        darkMode ? 'bg-[#090D16] text-slate-100' : 'bg-[#FAFCFF] text-slate-900'
+        darkMode ? 'bg-[#0A0F1D] text-slate-100' : 'bg-[#F8FAFC] text-slate-900'
       }`}
     >
-      {/* Navigation Top Header */}
+      {/* 01. Sticky Top Navigation */}
       <Navbar 
         darkMode={darkMode} 
         setDarkMode={setDarkMode} 
         onOpenLeadModal={handleOpenLeadModal} 
       />
 
-      {/* Main Content Sections */}
+      {/* Main Content: KR Studio Authentic Sections */}
       <main>
-        {/* 02. Hero Section (Roy Digital style benchmark) */}
+        {/* 02. Hero with Value Prop & Code-Rendered Zenith Ops Device Showcase */}
         <Hero onOpenLeadModal={handleOpenLeadModal} />
 
-        {/* 03. Capabilities Matrix (8 Domain Cards) */}
+        {/* 03. Full-Stack Capabilities Matrix (8 Domain Cards with Expandable Architecture Specs) */}
         <Capabilities onOpenLeadModal={handleOpenLeadModal} />
 
-        {/* 04. Ownership & Trust ("We build it. You own it.") */}
-        <OwnershipSection onOpenLeadModal={() => handleOpenLeadModal('Custom Platform Ownership Build')} />
+        {/* 04. Absolute Asset Ownership & Control ("We Build It. You Own It.") */}
+        <OwnershipSection onOpenLeadModal={() => handleOpenLeadModal('100% Code Ownership Build')} />
 
-        {/* 05. Portfolio & Demo Library */}
+        {/* 05. Portfolio & Interactive Work Demos (Zenith Ops, Pulse Health, OmniFlow, Apex Ledger) */}
         <Portfolio onOpenLeadModal={handleOpenLeadModal} />
 
-        {/* 06. The Process (7-Step Interactive Sprint Timeline) */}
-        <ProcessTimeline onOpenLeadModal={() => handleOpenLeadModal('Sprint Planning Consultation')} />
+        {/* 06. The 7-Step Build Process (Discovery to 30-Day Support) */}
+        <ProcessTimeline onOpenLeadModal={() => handleOpenLeadModal('Project Inquiry')} />
 
-        {/* 07. Team Section (Truthful Profiles: Swaroop & Krish) */}
+        {/* 07. Studio Founders & Lead Engineers (Swaroop & Krish) */}
         <TeamSection onOpenLeadModal={() => handleOpenLeadModal('Direct Engineering Inquiry')} />
 
-        {/* 08. FAQ (Accordion System) */}
-        <FAQSection onOpenLeadModal={() => handleOpenLeadModal('Technical Feasibility Question')} />
+        {/* 08. Frequently Answered Questions (Accurate Studio Policies) */}
+        <FAQSection onOpenLeadModal={() => handleOpenLeadModal('Technical Question')} />
+
+        {/* 09. High-Impact Bottom Call to Action Banner */}
+        <BottomBanner onOpenLeadModal={() => handleOpenLeadModal('Free Product Architecture Call')} />
       </main>
 
-      {/* 09. Footer */}
+      {/* 10. Footer */}
       <Footer onOpenLeadModal={() => handleOpenLeadModal('Footer Inquiry')} />
 
-      {/* Interactive Lead Intake Modal */}
+      {/* Lead Intake Modal */}
       <LeadModal
         isOpen={leadModalOpen}
         onClose={handleCloseLeadModal}

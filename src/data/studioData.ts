@@ -16,11 +16,11 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
       badgeBg: 'bg-blue-50 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300'
     },
     iconName: 'Globe',
-    simpleDescription: 'Custom, blazing-fast web applications engineered for speed, clean UX, and high conversion.',
+    simpleDescription: 'Blazing-fast web apps engineered with modern React, Next.js, and TypeScript. Optimized for sub-second loads and high conversion.',
     keyPoints: [
-      'Sub-second initial page loads with modern SSR and static generation',
-      'Modular TypeScript component architecture that scales without tech debt',
-      'Native SEO compliance and high-contrast accessibility standards'
+      'Sub-second load times via server-side rendering and edge caching',
+      'Clean TypeScript architecture built to scale without tech debt',
+      'Built-in SEO, accessibility, and fluid mobile ergonomics'
     ],
     techSpecs: {
       coreStack: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Vite / Turbopack'],
@@ -44,11 +44,11 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
       badgeBg: 'bg-purple-50 text-purple-700 dark:bg-purple-950/50 dark:text-purple-300'
     },
     iconName: 'Smartphone',
-    simpleDescription: 'High-performance iOS and Android mobile apps with smooth 60fps animations and native device access.',
+    simpleDescription: 'Smooth 60fps iOS and Android apps deployed from a single codebase. Complete with push alerts, offline storage, and biometric auth.',
     keyPoints: [
-      'Single codebase deployment across Apple App Store and Google Play Store',
-      'Native camera, push notifications, biometric auth, and offline sync',
-      'Intuitive touch-first gestures with haptic feedback integration'
+      'Cross-platform iOS and Android builds submitted directly to stores',
+      'Native device features: camera, biometric login, and push alerts',
+      'Offline-first sync that works smoothly without network drops'
     ],
     techSpecs: {
       coreStack: ['React Native / Expo', 'Kotlin & Swift bridges', 'SQLite / WatermelonDB', 'Fastlane'],
@@ -72,11 +72,11 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
       badgeBg: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300'
     },
     iconName: 'LayoutGrid',
-    simpleDescription: 'Bespoke operational tools, client management portals, and internal dashboards that replace messy spreadsheets.',
+    simpleDescription: 'Custom operational portals, internal tools, and dashboards built around your business rules. Replaces clunky $300/mo SaaS platforms.',
     keyPoints: [
-      'Role-based permissions for staff, managers, and external clients',
-      'Real-time data synchronization with custom audit logs',
-      'Direct integration with existing CRM, inventory, and accounting tools'
+      'Role-based permissions for staff, managers, and clients',
+      'Real-time database sync with complete audit history',
+      'Direct integrations with Stripe, CRMs, and accounting systems'
     ],
     techSpecs: {
       coreStack: ['PostgreSQL', 'Drizzle ORM / Prisma', 'Next.js App Router', 'Redis Queue', 'Docker'],
@@ -100,11 +100,11 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
       badgeBg: 'bg-fuchsia-50 text-fuchsia-700 dark:bg-fuchsia-950/50 dark:text-fuchsia-300'
     },
     iconName: 'Sparkles',
-    simpleDescription: 'Practical AI pipelines, document intelligence, semantic search, and custom agentic workflows built for utility.',
+    simpleDescription: 'Utility-driven AI workflows, custom RAG search, and document parsers trained securely on your proprietary business records.',
     keyPoints: [
-      'Retrieval-Augmented Generation (RAG) trained strictly on your proprietary data',
-      'Automated customer support routing and natural language queries',
-      'Deterministic fallback systems to eliminate AI hallucinations'
+      'Custom RAG knowledge engines trained strictly on your data',
+      'Automated document parsing and semantic contract review',
+      'Zero data retention for training—your IP stays 100% private'
     ],
     techSpecs: {
       coreStack: ['Gemini 1.5 & Flash', 'Pinecone / pgvector', 'LangChain / Vercel AI SDK', 'Python / Fastify'],
@@ -128,11 +128,11 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
       badgeBg: 'bg-orange-50 text-orange-700 dark:bg-orange-950/50 dark:text-orange-300'
     },
     iconName: 'Zap',
-    simpleDescription: 'Hands-off automated pipelines that connect your tools, sync records, and eliminate repetitive clerical tasks.',
+    simpleDescription: 'Reliable background automation pipelines that sync databases, trigger webhooks, and eliminate manual busywork.',
     keyPoints: [
-      'Automated webhook listeners with retry queues and failure alerts',
-      'Instant synchronization between CRMs, email, Slack, and accounting',
-      'Scheduled background workers executing recurring batch jobs'
+      'Resilient webhook listeners with automated retry queues',
+      'Instant sync across CRMs, Slack, email, and billing platforms',
+      'Scheduled background jobs running reliably without oversight'
     ],
     techSpecs: {
       coreStack: ['Inngest / BullMQ', 'Temporal / Make', 'Webhooks API', 'Node.js Microservices'],
@@ -156,11 +156,11 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
       badgeBg: 'bg-amber-50 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300'
     },
     iconName: 'CreditCard',
-    simpleDescription: 'Frictionless checkout flows, recurring subscriptions, international currency support, and automated tax handling.',
+    simpleDescription: 'High-conversion checkout flows, multi-currency pricing, and subscription billing powered by Stripe.',
     keyPoints: [
-      'Full Stripe, Lemon Squeezy, and PayPal custom integration',
-      'Automated invoice generation, usage-based metering, and dunning management',
-      'PCI-DSS compliant client-side tokenization with zero card liability'
+      'Seamless checkout and customer billing portal setup',
+      'Automated invoicing, tax calculation, and failed payment recovery',
+      'PCI-compliant tokenization with zero card liability'
     ],
     techSpecs: {
       coreStack: ['Stripe Billing & Elements', 'Stripe Tax / LemonSqueezy', 'PostgreSQL Ledgers', 'Webhooks'],
@@ -184,11 +184,11 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
       badgeBg: 'bg-indigo-50 text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300'
     },
     iconName: 'Cloud',
-    simpleDescription: 'Reliable, cost-conscious cloud architecture deployed directly into your own AWS, Google Cloud, or Vercel accounts.',
+    simpleDescription: 'Reliable, auto-scaling cloud infrastructure deployed directly inside your own AWS, Google Cloud, or Vercel account.',
     keyPoints: [
-      'Serverless auto-scaling that handles traffic surges while minimizing idle costs',
+      'Auto-scaling serverless setups that minimize idle cloud costs',
       'Automated daily database backups with point-in-time recovery',
-      'Global CDN edge distribution for static assets and API caching'
+      'Global edge CDN distribution for instant worldwide performance'
     ],
     techSpecs: {
       coreStack: ['AWS / Google Cloud Run', 'Vercel / Cloudflare', 'Terraform / Pulumi', 'Docker'],
@@ -212,11 +212,11 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
       badgeBg: 'bg-red-50 text-red-700 dark:bg-red-950/50 dark:text-red-300'
     },
     iconName: 'ShieldCheck',
-    simpleDescription: 'Defensive engineering from line one. We protect your user data, API endpoints, and intellectual property.',
+    simpleDescription: 'Hardened engineering from line one. Enterprise auth, encryption, and zero-trust API protection.',
     keyPoints: [
-      'Enterprise-grade OAuth 2.0, SSO, passwordless authentication, and MFA',
-      'AES-256 data encryption at rest and TLS 1.3 encryption in transit',
-      'Automated dependency vulnerability audits and penetration checks'
+      'Enterprise OAuth 2.0, SSO, passwordless auth, and MFA',
+      'AES-256 encryption at rest and TLS 1.3 in transit',
+      'OWASP-compliant code audits and automated vulnerability scans'
     ],
     techSpecs: {
       coreStack: ['Auth0 / Supabase Auth', 'Lucia / NextAuth', 'OWASP Top 10 Guidelines', 'Snyk / Dependabot'],
@@ -429,107 +429,107 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
 export const PROCESS_PHASES: ProcessPhase[] = [
   {
     step: 1,
-    name: 'Discover',
-    subtitle: 'Scope, objectives & business model',
-    description: 'We unpack your exact business goals, current bottlenecks, target audience, and feature priorities. No jargon or hand-waving—just clear functional definitions.',
+    name: 'Discover & Scope',
+    subtitle: 'Clarify goals, core features & requirements',
+    description: 'We unpack your exact business goals, current bottlenecks, target users, and core feature priorities. No fluff or jargon—just clean functional specifications.',
     deliverables: [
       'Written Functional Specification Document',
-      'Feature Scope Breakdown (Must-Have vs. Nice-to-Have)',
+      'Feature Scope Breakdown (Core vs. Future Enhancements)',
       'Recommended Architecture & Technology Stack',
-      'Fixed Pricing & Clear Delivery Schedule'
+      'Fixed Pricing & Immediate Turnaround Schedule'
     ],
-    timeline: '2–4 Days',
-    clientProvides: 'Core business overview, existing tool access (if any), and brand assets or reference sites.',
+    timeline: 'Immediate Intake',
+    clientProvides: 'Core business overview, existing tool access (if any), and brand preferences.',
     accentColor: '#3B82F6'
   },
   {
     step: 2,
-    name: 'Plan',
-    subtitle: 'Architecture & technical blueprint',
-    description: 'We design the data schema, API routes, user permission matrices, and security models before a single line of interface is built.',
+    name: 'Architecture & Blueprint',
+    subtitle: 'Data schemas, API maps & technical structure',
+    description: 'We structure the database schemas, API routes, user permission matrices, and security models so the foundation is rock solid before interface construction.',
     deliverables: [
-      'Database Schema Entity-Relationship Diagram',
+      'Database Schema & Data Model Diagram',
       'User Journey & Navigation Sitemap',
       'API Integration & Third-Party Service Map',
-      'Sprint Milestones & Review Schedule'
+      'Fast Milestone Checkpoint Schedule'
     ],
-    timeline: '3–5 Days',
-    clientProvides: 'Feedback on key workflows, domain preferences, and approval of technical boundaries.',
+    timeline: 'Rapid Blueprint',
+    clientProvides: 'Quick feedback on essential workflows and technical boundaries.',
     accentColor: '#06B6D4'
   },
   {
     step: 3,
-    name: 'Design',
-    subtitle: 'UI/UX mockups & design system',
-    description: 'We create high-fidelity, interactive prototypes in Figma following clean modern aesthetics, strict typography, and responsive ergonomics.',
+    name: 'Design & Prototyping',
+    subtitle: 'High-fidelity UI/UX & component system',
+    description: 'We craft high-fidelity, interactive desktop and mobile interfaces with clean modern aesthetics, readable typography, and ergonomic touch controls.',
     deliverables: [
-      'Clickable Desktop & Mobile Prototypes',
+      'Interactive Desktop & Mobile Screen Layouts',
       'Component Design System (Typography, Colors, States)',
       'Design Token Specifications',
-      'Design Sign-off Review Call'
+      'Direct Prototype Review'
     ],
-    timeline: '1–2 Weeks',
-    clientProvides: 'Constructive review on visual aesthetic, wording adjustments, and prototype approval.',
+    timeline: 'Fast Visual Mockup',
+    clientProvides: 'Quick visual feedback and confirmation of preferred layout.',
     accentColor: '#8B5CF6'
   },
   {
     step: 4,
-    name: 'Build',
-    subtitle: 'Sprint-based engineering & integration',
-    description: 'We build your product in transparent, testable sprints. You get access to a live staging URL from day one to watch progress as features come to life.',
+    name: 'Core Engineering',
+    subtitle: 'High-speed development & system integration',
+    description: 'We build your system rapidly and cleanly. You get access to a live staging environment from day one to test features as they are engineered.',
     deliverables: [
       'Private GitHub Repository with Clean Commit History',
-      'Live Staging Environment for Testing',
-      'Weekly Async Video Walkthroughs',
+      'Live Staging Environment for Instant Testing',
+      'Direct Real-Time Walkthroughs with Founders',
       'Working Database & API Infrastructure'
     ],
-    timeline: '2–4 Weeks (per sprint)',
-    clientProvides: 'Weekly staging feedback and prompt clarification on specific business rules.',
+    timeline: '1–2 Day Rapid Build',
+    clientProvides: 'Review on the live staging link as features are completed.',
     accentColor: '#10B981'
   },
   {
     step: 5,
-    name: 'Test',
-    subtitle: 'Quality assurance, security & performance',
-    description: 'We rigorously stress-test the product: responsive layout audits, edge cases, permission security tests, and sub-second speed optimization.',
+    name: 'Testing & Hardening',
+    subtitle: 'Quality assurance, security & performance audits',
+    description: 'We stress-test the product: responsive layout checks across real mobile devices, edge-case testing, permission verification, and sub-second load tuning.',
     deliverables: [
-      'Cross-Browser & Multi-Device Testing Matrix',
+      'Cross-Device Mobile & Desktop Testing Audit',
       'Lighthouse Performance & Accessibility Audit (95+ score)',
-      'Security Vulnerability & Auth Penetration Check',
-      'User Acceptance Testing (UAT) Sign-off'
+      'Security Vulnerability & Auth Penetration Verification',
+      'Final Acceptance Sign-off'
     ],
-    timeline: '3–5 Days',
+    timeline: 'Quality Hardening',
     clientProvides: 'Final team verification on real-world test scenarios.',
     accentColor: '#F97316'
   },
   {
     step: 6,
-    name: 'Launch',
-    subtitle: 'Deployment & store submission',
-    description: 'We orchestrate zero-downtime production deployment. For mobile apps, we handle Apple App Store and Google Play Store submission paperwork and compliance.',
+    name: 'Hosting & Domain Setup',
+    subtitle: 'Client-owned accounts with zero renewal markups',
+    description: 'We configure your domain, SSL, cloud hosting, and app store submissions strictly in your own account and registrar. Why? Because if an agency buys domains or hosting on their side, you are locked into paying renewal markups and hostage fees. We ensure 100% legal ownership, direct billing, and DNS control remain in your hands forever.',
     deliverables: [
-      'Production Domain & SSL Setup',
-      'Apple App Store & Google Play Submission',
-      'Live Cloud Infrastructure Health Check',
-      'Automated Database Backup Verification'
+      'Direct Domain & SSL Configuration in Your Registrar',
+      'Apple App Store & Google Play Submission Guidance',
+      'Cloud Deployment into Your Dedicated Account',
+      'Zero Agency Markups on Hosting or Domain Renewals'
     ],
-    timeline: '2–4 Days',
-    clientProvides: 'Domain registrar access and App Store / Cloud developer account invites.',
+    timeline: 'Live Production Launch',
+    clientProvides: 'Your domain registrar and cloud account credentials or invites.',
     accentColor: '#EAB308'
   },
   {
     step: 7,
-    name: 'Handoff',
-    subtitle: '100% ownership & post-launch care',
-    description: 'We don’t lock you in. You receive 100% of the source code, cloud credentials, documentation, and a dedicated 30-day post-launch warranty.',
+    name: '100% Handover & Warranty',
+    subtitle: 'Full source code ownership & post-launch care',
+    description: 'We do not lock you in. You receive 100% of the private source code repository, cloud admin keys, video walkthrough documentation, and a dedicated 30-day bug warranty.',
     deliverables: [
-      'Complete Source Code Ownership Transfer',
-      'Loom Video Walkthrough Guide for Your Team',
+      'Complete GitHub Repository Ownership Transfer',
+      'Video Walkthrough Guide for Your Team',
       'Full Cloud & Database Admin Access',
-      '30 Days of Included Bug Fix & Maintenance Warranty'
+      '30 Days of Complimentary Post-Launch Bug Warranty'
     ],
-    timeline: 'Day 1 Post-Launch',
-    clientProvides: 'Acknowledgment of transfer and kickoff of optional ongoing care retainer.',
+    timeline: 'Day 1 Handover',
+    clientProvides: 'Acknowledgment of transfer and kickoff of optional ongoing care.',
     accentColor: '#EC4899'
   }
 ];
@@ -559,7 +559,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     responsibilities: [
       'Cross-platform iOS and Android mobile app development',
       'Store certification, compliance, and release management',
-      'International client communication and sprint coordination',
+      'International client communication and milestone coordination',
       'Payment gateway integrations and invoicing workflows'
     ],
     avatarInitial: 'K',
@@ -580,13 +580,13 @@ export const FAQ_DATA: FAQItem[] = [
   },
   {
     question: 'How do you handle international and US-based clients?',
-    answer: 'We regularly partner with founders and business operators across North America and Europe. We align our sprint reviews, live syncs, and emergency support with US time zones (EST and PST friendly). We use clear written documentation, async Loom video updates, shared staging environments, and transparent project tracking so you are never left guessing.',
+    answer: 'We regularly partner with founders and business operators across North America and Europe. We align our project reviews, live syncs, and support with US time zones (EST and PST friendly). We use clear written documentation, async Loom video updates, shared staging environments, and transparent project tracking so you are never left guessing.',
     highlight: 'US-friendly hours, transparent async communication, and clear English documentation.'
   },
   {
-    question: 'What is the typical timeline for a custom web or mobile app?',
-    answer: 'A focused MVP or production-grade web application typically takes 3 to 6 weeks from initial discovery to live production. More complex platforms or multi-platform mobile apps generally take 6 to 10 weeks across structured 2-week sprints. Because we work in direct engineering sprints without corporate bloat, we ship weeks faster than traditional agencies.',
-    highlight: 'Focused MVPs in 3–6 weeks; enterprise builds in 6–10 weeks.'
+    question: 'What is the typical turnaround for a custom web or mobile project?',
+    answer: 'We work rapidly without corporate bloat: focused MVPs and core product blueprints can be completed in as fast as 1 to 2 days. More comprehensive multi-platform suites are delivered across fast structured milestones. Because you work directly with technical founders Swaroop & Krish, builds ship significantly faster than traditional agencies.',
+    highlight: 'Rapid 1–2 day builds for focused projects; fast milestones for multi-platform suites.'
   },
   {
     question: 'How do revisions, warranty, and post-launch support work?',

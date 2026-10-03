@@ -25,7 +25,7 @@ interface LeadModalProps {
 export const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, initialProjectType }) => {
   const [selectedTypes, setSelectedTypes] = useState<string[]>(['Web Application']);
   const [budgetTier, setBudgetTier] = useState<string>('$6,000 – $15,000 (Standard Production Build)');
-  const [timeline, setTimeline] = useState<string>('3–6 Weeks (Rapid Sprint)');
+  const [timeline, setTimeline] = useState<string>('1–2 Days (Rapid MVP Build)');
   const [fullName, setFullName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [company, setCompany] = useState<string>('');
@@ -57,16 +57,16 @@ export const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, initialPr
   ];
 
   const budgetOptions = [
-    '$3,000 – $6,000 (Focused MVP Sprint)',
+    '$3,000 – $6,000 (Focused MVP Build)',
     '$6,000 – $15,000 (Standard Production Build)',
     '$15,000 – $30,000+ (Multi-Platform / Enterprise)',
     'Advisory / Custom Architecture Scope',
   ];
 
   const timelineOptions = [
-    '2–4 Weeks (Immediate Priority)',
-    '3–6 Weeks (Rapid Sprint)',
-    '6–10 Weeks (Comprehensive Roadmap)',
+    '1–2 Days (Immediate Priority / Rapid MVP)',
+    '1–2 Weeks (Production Build)',
+    '2–4 Weeks (Multi-Platform Suite)',
     'Flexible / Planning Phase',
   ];
 
@@ -123,7 +123,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({ isOpen, onClose, initialPr
               <span className="text-xs text-white/80">Direct to Swaroop & Krish</span>
             </div>
             <h3 className="text-xl font-bold font-display mt-1">
-              Start Your Project Sprint
+              Start Your Project
             </h3>
           </div>
 
